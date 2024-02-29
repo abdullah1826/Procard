@@ -1,0 +1,54 @@
+::-webkit-scrollbar {display:none;}
+.SocialSites2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+     
+    overflow-y: scroll;
+    flex-direction: column;
+    background-color: rgba(237, 237, 237, 1)  ;
+    font-weight: bold;
+margin-top: 20px;
+
+}
+
+.single-link-site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content:space-between;
+    width: 95%;
+    height: 52px;
+    background-color: white;
+    box-shadow: 1px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.link-apps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4FA8ED;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.add-apps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.single-link-site h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+width: 20px;
+height: 19px;
+border-radius: 50%;
+background-color:beige;
+font-size: 10px;
+}

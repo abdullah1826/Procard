@@ -1,0 +1,146 @@
+.edit_home_main_div {
+    display: flex;
+    justify-content: center;
+    
+    width: 100vw;
+    
+}
+
+.edit_home_sub_main_div {
+   height: 100vh;
+    max-width: 430px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #f3f2f7; */
+    /* background-color: white; */
+    /* background-color: #fcfcfc; */
+    position: relative;
+    /* margin-bottom: 2rem; */
+}
+
+.profile_card_and_social_sites_main {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+   
+    /* background-color: antiquewhite; */
+    margin-bottom: 65px;
+    width: 100%;
+}
+
+.profile_card_and_social_sites_main::-webkit-scrollbar {
+    display: none;
+}
+
+.edit_home_card_componenet_main {
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    /* background-color: #7665cf; */
+}
+
+.change_password_Change_email_main_Div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 14px;
+    margin-top: 14px;
+    width: 95%;
+    align-self: center;
+}
+
+.social_sites_mainn {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    align-self: center;
+    /* align-items: center; */
+    /* height: 50%; */
+    background-color: #ededed;
+    /* max-height: 300px;
+    overflow-y: scroll;
+    height: 100%; */
+
+    /* margin-bottom: 4em; */
+    margin-top: 1em;
+    /* position: relative; */
+}
+
+.edit_home_social_sites_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem;
+    height: max-content;
+    position: relative;
+    cursor: pointer;
+    width:100%;
+}
+
+.both_btns_main_div {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.cancel_and_save_btn_main {
+    /* margin-top: 1rem; */
+    display: flex;
+    flex-direction: row;
+    width: 365px;
+    height: 65px;
+    justify-content: space-evenly;
+    align-items: center;
+    /* position: fixed; */
+    /* background-color: #f8f7fc; */
+    /* background-color: #fcfcfc; */
+    /* background-color: white; */
+    margin-top: -48px;
+    z-index: 2 !important;
+}
+
+.Cancel__button {
+    height: 2.2rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%);
+    color: white;
+    /* border: 1px solid darkgray; */
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: "Montserrat Regular", sans-serif;
+    z-index: 2 !important;
+    cursor: pointer;
+
+}
+
+.save__button {
+    height: 2.2rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%);
+    /* border: 1px solid darkgray; */
+   
+    font-family: "Montserrat Regular", sans-serif;
+    z-index: 2 !important;
+    cursor: pointer;
+}
+.main33{
+    
+}
