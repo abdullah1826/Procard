@@ -33,12 +33,12 @@ import {
 import { useTranslation } from "react-i18next";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
-const BottommSheet = ({ showSheet, hideSheet }) => {
+const BottommSheet = ({ showSheet, hideSheet, url }) => {
   const { t } = useTranslation();
   let quote = "Share";
   // t("sharetext");
   let theId = localStorage.getItem("sapiduserid");
-  let url = "https://www.google.com";
+  // let url = "https://www.google.com";
   // `https://profile.ourkindplanet.com/${theId}`;
   return (
     <Dialog open={showSheet} onClose={hideSheet}>

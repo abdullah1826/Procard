@@ -168,9 +168,9 @@ const EditHome = () => {
         if (snapshot.exists()) {
           // console.log(snapshot.val(), "console of user table");
           dispatch(loginUserObj(snapshot.val()));
-          setCardColor(snapshot.val()?.cardColor);
-          settheme(snapshot.val()?.theme);
-          setStyle(snapshot.val()?.IconStyle);
+          // setCardColor(snapshot.val()?.cardColor);
+          // settheme(snapshot.val()?.theme);
+          // setStyle(snapshot.val()?.IconStyle);
         } else {
           console.log("No data available");
         }

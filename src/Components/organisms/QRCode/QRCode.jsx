@@ -174,8 +174,8 @@ const QRCodeScan = () => {
         <div className="qr_code_main_div">
           {/* <img src={qrImageURL} alt="" className="qr_code_generated_css" /> */}
           <QRCode
-            // value={`https://profile.ourkindplanet.com/${theId}`}
-            value="https://www.google.com"
+            value={`https://profile.procard.africa/${theId}`}
+            // value="https://www.google.com"
             size="170"
             // logoImage={qrLogo}
             // fgColor={qrColor ? qrColor : "black"}
@@ -199,7 +199,7 @@ const QRCodeScan = () => {
           }}
         >
           <BottommSheet
-            url="https://www.google.com"
+            url={`https://profile.procard.africa/${theId}`}
             showSheet={showBottomSheet}
             hideSheet={() => setShowBottomSheet(false)}
           />

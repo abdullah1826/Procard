@@ -171,6 +171,8 @@ export default function SocialSites2({ theme, settheme, setStyle, istyle }) {
                   alignItems: "center",
                   fontSize: "16px",
                   cursor: "pointer",
+                  color: "black",
+                  textDecoration: "none",
                 }}
                 onClick={() => changeTheme("theme1")}
               >
@@ -275,7 +277,7 @@ export default function SocialSites2({ theme, settheme, setStyle, istyle }) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 360,
+            width: window?.innerWidth > 440 ? "360px" : "90%",
             bgcolor: "white",
             borderRadius: "21px",
             background: "#FFF",

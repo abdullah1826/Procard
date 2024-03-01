@@ -21,14 +21,12 @@ import SignupPage2 from "./Components/organisms/SignupPage2/SignupPage2";
 import SigninPage2 from "./Components/organisms/SigninPage2/SigninPage2";
 import ForogotPassword2 from "./Components/organisms/ForogotPassword2/ForogotPassword2";
 
-
-
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<LoginPage2/>} />
+          <Route exact path="/" element={<LoginPage2 />} />
           {/*<Route exact path="/Signoption" element={<SplashScreen />} />*/}
           <Route
             exact
@@ -55,7 +53,7 @@ function App() {
           <Route exact path="/scan/your/code" element={<QRCodeScreen />} />
           <Route exact path="/finalprofile" element={<FinalProfile />} />
           <Route exact path="/loginpage2" element={<LoginPage2 />} />
-          <Route exact path="/signuppage2" element={<SignupPage2 />} />
+          <Route exact path="/signuppage2/:tag" element={<SignupPage2 />} />
           <Route exact path="/signinpage2" element={<SigninPage2 />} />
           <Route exact path="/forgotpassword2" element={<ForogotPassword2 />} />
           {/* <Route

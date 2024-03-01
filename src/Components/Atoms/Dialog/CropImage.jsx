@@ -83,7 +83,7 @@ const CropImage = ({
         <Button
           onClick={hidePopup}
           style={{
-            backgroundColor:
+            background:
               "linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%)",
             display: "flex",
             justifyContent: "center",

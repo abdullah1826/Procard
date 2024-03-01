@@ -360,7 +360,9 @@ const EditHomeCard = ({
                 placeholder={t("Phone")}
                 name="phone_number"
                 value={editUserData?.phone_number}
-                className="input_fields_csss"
+                className={`input_fields_csss ${
+                  theme === "theme1" ? "plb" : "plw"
+                }`}
                 onChange={(e) => textFieldOnChange(e)}
                 style={{
                   backgroundColor: "inherit",
@@ -383,7 +385,9 @@ const EditHomeCard = ({
                 placeholder={t("Location")}
                 name="location"
                 value={editUserData.location}
-                className="input_fields_csss"
+                className={`input_fields_csss ${
+                  theme === "theme1" ? "plb" : "plw"
+                }`}
                 onChange={(e) => textFieldOnChange(e)}
                 style={{
                   backgroundColor: "inherit",
@@ -449,6 +453,7 @@ const EditHomeCard = ({
                     border: "1px solid black",
                     backgroundColor: "#00c4b9",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#00c4b9")}
                 ></div>
@@ -460,6 +465,7 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "black",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#000000")}
                 ></div>
@@ -471,6 +477,7 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "#ff4a4b",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#ff4a4b")}
                 ></div>
@@ -482,8 +489,9 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "#ff9441",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
-                  onClick={() => setCardColor("#ff4a4b")}
+                  onClick={() => setCardColor("#ff9441")}
                 ></div>
                 <div
                   style={{
@@ -493,6 +501,7 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "#fdc74a",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#fdc74a")}
                 ></div>
@@ -504,6 +513,7 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "#009859",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#009859")}
                 ></div>
@@ -515,6 +525,7 @@ const EditHomeCard = ({
                     borderRadius: "100%",
                     backgroundColor: "#0082ed",
                     cursor: "pointer",
+                    border: "1px solid white",
                   }}
                   onClick={() => setCardColor("#0082ed")}
                 ></div>

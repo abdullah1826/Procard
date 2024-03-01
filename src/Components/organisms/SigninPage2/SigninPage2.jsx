@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import React, { useState } from "react";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import "../SigninPage2/SigninPage2.css";
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { Link } from 'react-router-dom';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Link } from "react-router-dom";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import SapidLogo from "../../../Assets/Images/kindlogo.png";
 import leaf7 from "../../../Assets/Images/leaf7.png";
 import leaf8 from "../../../Assets/Images/leaf8.png";
@@ -137,40 +137,75 @@ export default function SigninPage2() {
     }
   };
   return (
-    <div style={{display:"flex",justifyContent:'center'}}>
-    <div className='siginpage2' >
-    <div style={{width:'85%', marginTop:'25px'}}><Link to="/loginpage2"><ArrowBackIosIcon style={{color:'black'}}/></Link></div>
-    <img width="148px" height='110px' style={{marginTop:'30px'}} src='images/procard.png'/>
-    <div className='Textsigin'>
-    <h1>The Networking Card of the Future!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur. Cursus mauris in sodales aliquet augue bibendum velit.</p>
-    </div>
-    <div className='input-sigin2'>
-    <input type='Email' placeholder='Enter Email' onChange={(e) => handleTextFieldOnChange(e, 'email')}
-    value={userData?.email}/>
-    </div>
-    <span className='password-ii'><input type={showpassword===true ? 'password':'text'} placeholder='Enter Password'  onChange={(e) => handleTextFieldOnChange(e, 'password')}
-    value={userData?.password} />{showpassword === true ? (
-      <RemoveRedEyeIcon  onClick={() => setShowpassword(false)} />
-    ) : (
-      <VisibilityOffIcon onClick={() => setShowpassword(true)} />
-    )}</span>
-    <Link to="/forgotpassword2" style={{display:'flex',justifyContent:'flex-end',width:'79%',color:"black"}}>Forgot Password?</Link>
-    <button onClick={signInPressFunc} id='buttonn2'>Login</button>
-    <p style={{marginTop:'50px'}}>Don’t have an account? <Link to='/signuppage2' style={{color:'black',fontWeight:'bold'}}>Sign up</Link></p>
-    </div>
-    <ToastContainer position="top-center" autoClose={1000} />
-          <AlertMessage
-            showAlert={showValidationAlert}
-            hideAlert={() => setShowValidationAlert(false)}
-            confirmPressed={() => setShowValidationAlert(false)}
-            title={validationAlert.title}
-            text={validationAlert.text}
-            errorType={validationAlert.errorType}
-            showCancelButton={false}
-            showConfirmButton={true}
-            confirmButtonText={t("Close")}
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="siginpage2">
+        <div style={{ width: "85%", marginTop: "25px" }}>
+          <Link to="/loginpage2">
+            <ArrowBackIosIcon style={{ color: "black" }} />
+          </Link>
+        </div>
+        <img
+          width="148px"
+          height="110px"
+          style={{ marginTop: "30px" }}
+          src="images/procard.png"
+        />
+        <div className="Textsigin">
+          <h1>The Networking Card of the Future!</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Cursus mauris in sodales
+            aliquet augue bibendum velit.
+          </p>
+        </div>
+        <div className="input-sigin2">
+          <input
+            type="Email"
+            placeholder="Enter Email"
+            onChange={(e) => handleTextFieldOnChange(e, "email")}
+            value={userData?.email}
           />
+        </div>
+        <span className="password-ii">
+          <input
+            type={showpassword === true ? "password" : "text"}
+            placeholder="Enter Password"
+            onChange={(e) => handleTextFieldOnChange(e, "password")}
+            value={userData?.password}
+          />
+          {showpassword === true ? (
+            <RemoveRedEyeIcon onClick={() => setShowpassword(false)} />
+          ) : (
+            <VisibilityOffIcon onClick={() => setShowpassword(true)} />
+          )}
+        </span>
+        <Link
+          to="/forgotpassword2"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "79%",
+            color: "black",
+          }}
+        >
+          Forgot Password?
+        </Link>
+        <button onClick={signInPressFunc} id="buttonn2">
+          Login
+        </button>
+        {/* <p style={{marginTop:'50px'}}>Don’t have an account? <Link to='/signuppage2' style={{color:'black',fontWeight:'bold'}}>Sign up</Link></p> */}
+      </div>
+      <ToastContainer position="top-center" autoClose={1000} />
+      <AlertMessage
+        showAlert={showValidationAlert}
+        hideAlert={() => setShowValidationAlert(false)}
+        confirmPressed={() => setShowValidationAlert(false)}
+        title={validationAlert.title}
+        text={validationAlert.text}
+        errorType={validationAlert.errorType}
+        showCancelButton={false}
+        showConfirmButton={true}
+        confirmButtonText={t("Close")}
+      />
     </div>
-  )
+  );
 }

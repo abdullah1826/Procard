@@ -1146,6 +1146,7 @@ const Home = () => {
                     alignItems: "center",
                     fontWeight: 500,
                     fontFamily: "MadeOuterSansLight ,sans-serif",
+                    color: "black",
                   }}
                 >
                   {t("noLinks")}

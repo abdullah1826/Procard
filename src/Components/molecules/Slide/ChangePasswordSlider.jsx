@@ -35,7 +35,9 @@ const ChangePasswordSlider = ({
   //     return submit2(password)
   //   }
   // }
-
+  let loerCase = (text) => {
+    return text.toLowerCase();
+  };
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(true);
   const passwordHide = () => {
@@ -80,15 +82,16 @@ const ChangePasswordSlider = ({
           className="_new_password_div"
           style={{ color: theme === "theme1" ? "black" : "white" }}
         >
-          {t("enternewpassword")}
+          {/* {t("enternewpassword")} */}
+          Enter your Email to change password
         </div>
         <div className="change_password_text_field">
           <TextField
-            label={t("enteroldpass")}
+            label={"Enter your email"}
             variant="outlined"
-            type={showPassword ? "password" : "text"}
-            name="old_password"
-            value={password?.old_password}
+            type={"text"}
+            // name="old_password"
+            value={password}
             sx={{ boxShadow: 3, backgroundColor: "#fff", color: "#8C6766" }}
             style={{ height: "100%", width: "83%", color: "#8C6766" }}
             size="small"
@@ -96,7 +99,7 @@ const ChangePasswordSlider = ({
             onChange={(e) => changePasswordSliderTextOnChange(e)}
           />
 
-          <TextField
+          {/* <TextField
             label={t("enternewpass")}
             name="confirmPassword"
             variant="outlined"
@@ -117,9 +120,12 @@ const ChangePasswordSlider = ({
             style={{ height: "100%", width: "83%", marginTop: "14px" }}
             size="small"
             className="change_password_input_field_css"
-            onChange={(e) => setconfirmpass(e.target.value)}
-          />
-          <div style={{ display: "flex", marginTop: "10px", width: "80%" }}>
+            onChange={(e) => {
+              setconfirmpass(e.target.value);
+              changePasswordSliderTextOnChange(e);
+            }}
+          /> */}
+          {/* <div style={{ display: "flex", marginTop: "10px", width: "80%" }}>
             <FormControlLabel
               checked={!showPassword}
               control={
@@ -136,7 +142,7 @@ const ChangePasswordSlider = ({
                 color: theme === "theme1" ? "black" : "white",
               }}
             />
-          </div>
+          </div> */}
         </div>
         <div className="change_passwordd_save_button">
           <Button
@@ -149,12 +155,13 @@ const ChangePasswordSlider = ({
                 "linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%)",
               borderRadius: "10px",
               width: "85%",
-              marginBottom: "2px",
+              marginTop: "30px",
+              // marginBottom: "2px",
               height: "2.5rem",
-              marginBottom: "10px",
+              // marginBottom: "10px",
             }}
           >
-            {t("confirm")}
+            Send Email
           </Button>
         </div>
       </div>

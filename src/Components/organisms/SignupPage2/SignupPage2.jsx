@@ -43,7 +43,7 @@ export default function SignupPage2() {
 
   const { t } = useTranslation();
   const location = useLocation();
-  const { tagId } = useParams();
+  const { tag } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -161,8 +161,9 @@ export default function SignupPage2() {
                       timestamp: "",
                       theme: "theme1",
                       username: userData.user_name,
+                      cardColor: "#4FA8ED",
                     }).then(() => {
-                      if (tagId) {
+                      if (tag) {
                         const dbRef = ref(getDatabase());
                         get(child(dbRef, `/Tag`))
                           .then((snapshot) => {
@@ -170,14 +171,15 @@ export default function SignupPage2() {
                               let allTags = snapshot.val();
                               let tagsArray = Object.values(allTags);
                               let existingTag = tagsArray.find(
-                                (elm) => elm.tagId === tagId
+                                (elm) => elm.tagId === tag
                               );
                               if (existingTag) {
                                 update(ref(db, `Tag/` + existingTag.id), {
                                   status: true,
+                                  username: userData.user_name,
                                 }).then(() => {
                                   update(ref(db, "User/" + response.user.uid), {
-                                    tagUid: tagId,
+                                    tagUid: tag,
                                   });
                                 });
                               }

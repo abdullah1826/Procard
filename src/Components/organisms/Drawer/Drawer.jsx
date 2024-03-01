@@ -126,27 +126,33 @@ const Drawer = ({ hideDrawer, closedrawer, theme }) => {
     setResetPassword({ ...resetPassword, [name]: value });
   };
 
-  const handleChangePasswordSubmit = (password) => {
-    if (password?.password == "" || password?.confirmPassword == "") {
-      showAlertMessage(true, "alert", t("Alert"), t("makeSureFieldsFilled"));
-    } else if (password.password != password?.confirmPassword) {
-      showAlertMessage(true, "alert", t("Alert"), t("makeSurePasswordMatched"));
-    } else if (password?.password?.length < 6) {
-      showAlertMessage(true, "alert", t("Alert"), t("passwordInstructions"));
+  const handleChangePasswordSubmit = (email) => {
+    if (!email) {
+      // showAlertMessage(true, "alert", t("Alert"), "");
+      toast.error("Email field is requirde");
     } else {
       const user = auth.currentUser;
-      user
-        .updatePassword(password?.password)
-        .then(function () {
-          console.log("passwowrd updated successfuly");
-        })
-        .catch((error) => {
-          toast(error.message);
-        });
+      // user
+      //   ?.updatePassword(password?.confirmPassword)
+      //   .then(function () {
+      //     console.log("passwowrd updated successfuly");
+      //   })
+      //   .catch((error) => {
+      //     toast(error.message);
+      //   });
+
+      sendPasswordResetEmail(auth, email).then(() => {
+        // Password reset email sent!
+        // showAlertMessage(false, "alert", t("Alert"), "Email sent");
+        toast.success(
+          "An email have been sent to you, please verify to change password"
+        );
+        // ..
+      });
     }
   };
 
-  const handleChangeEmailSubmit = (inputData) => {
+  const handleChangeEmailSubmit = async (inputData) => {
     const emailRegEx =
       /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     if (emailRegEx.test(newEmail)) {
@@ -160,17 +166,33 @@ const Drawer = ({ hideDrawer, closedrawer, theme }) => {
           showAlertMessage(true, "alert", t("Alert"), t("emailAlreadyExists"));
         } else {
           const userId = auth?.currentUser?.uid;
-          verifyBeforeUpdateEmail(auth.currentUser, inputData).then(() => {
-            update(ref(db, "User/" + userId), {
-              email: inputData,
+
+          let provider = localStorage.getItem("provider");
+          if (provider == "emailpass") {
+            const credential = EmailAuthProvider.credential(
+              // auth.currentUser.email,
+              localStorage.getItem("email"),
+              localStorage.getItem("pass")
+            );
+
+            const result = reauthenticateWithCredential(
+              auth.currentUser,
+              credential
+            ).then(() => {
+              console.log("abc...");
+              verifyBeforeUpdateEmail(auth.currentUser, inputData).then(() => {
+                update(ref(db, "User/" + userId), {
+                  email: inputData,
+                });
+                get(child(dbRef, `User/${userId}`)).then((response) => {
+                  dispatch(loginUserObj(response.val()));
+                });
+                toast.success(t("emailUpdatedSuccess"));
+                // setNewEmail("");
+                setShowChangeEmailSlider(false);
+              });
             });
-            get(child(dbRef, `User/${userId}`)).then((response) => {
-              dispatch(loginUserObj(response.val()));
-            });
-            toast.success(t("emailUpdatedSuccess"));
-            // setNewEmail("");
-            setShowChangeEmailSlider(false);
-          });
+          }
         }
       });
     } else {
@@ -506,10 +528,10 @@ const Drawer = ({ hideDrawer, closedrawer, theme }) => {
         <ChangePasswordSlider
           showSlide={showChangePasswordSlider}
           hideSlide={() => setShowChangePasswordSlider(false)}
-          password={resetPassword}
+          password={newEmail}
           submit={(inputData) => handleChangePasswordSubmit(inputData)}
           changePasswordSliderTextOnChange={(e) =>
-            changePasswordSliderTextOnChange(e)
+            emailChangetextFieldOnChange(e)
           }
           theme={theme}
         />

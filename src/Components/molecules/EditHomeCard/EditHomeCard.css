@@ -105,7 +105,16 @@
   border: none;
 }
 
-.input_fields_csss::placeholder {
+/* .input_fields_csss::placeholder {
+  color: white;
+  font-size: 15px;
+} */
+.plb::placeholder {
+  color: black;
+  font-size: 15px;
+}
+
+.plw::placeholder {
   color: white;
   font-size: 15px;
 }
