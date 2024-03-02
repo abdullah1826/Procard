@@ -99,7 +99,7 @@ export default function SigninPage2() {
                 error.message ===
                 "Firebase: Error (auth/invalid-login-credentials)."
               ) {
-                toast.error(t("Wrongpassword"));
+                toast.error("You have entered invalid login credentials");
               } else if (
                 error.message === "Firebase: Error (auth/user-not-found)."
               ) {

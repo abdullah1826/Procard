@@ -35,7 +35,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 const BottommSheet = ({ showSheet, hideSheet, url }) => {
   const { t } = useTranslation();
-  let quote = "Share";
+  let quote = "Please check my Procard Profile Link below";
   // t("sharetext");
   let theId = localStorage.getItem("sapiduserid");
   // let url = "https://www.google.com";
@@ -88,7 +88,7 @@ const BottommSheet = ({ showSheet, hideSheet, url }) => {
             <WhatsappShareButton
               id="whatsapp"
               url={quote + "\n" + url}
-              text={"Please find my Profile Link below:"}
+              text={quote}
               hashtag="#React"
             >
               <WhatsappIcon size={40} round={true} />

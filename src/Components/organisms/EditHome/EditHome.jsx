@@ -582,7 +582,7 @@ const EditHome = () => {
                 console.log(snapshot.val());
                 dispatch(loginUserObj(snapshot.val()));
                 // toast.success(t("changesupdated"));
-                setTimeout(navigate("/home"), 2000);
+                // setTimeout(navigate("/home"), 2000);
                 // navigate('/home')
               } else {
                 toast.error(t("nodata"));
@@ -628,7 +628,8 @@ const EditHome = () => {
             if (snapshot.exists()) {
               console.log(snapshot.val());
               dispatch(loginUserObj(snapshot.val()));
-              setTimeout(navigate("/home"), 2000);
+              // setTimeout(navigate("/home"), 2000);
+              // toast.success("Information updated successfuly");
             } else {
               toast.error(t("nodata"));
             }
@@ -1484,6 +1485,7 @@ const EditHome = () => {
             showConfirmButton={true}
             confirmButtonText={t("Close")}
           />
+          <ToastContainer position="top-center" autoClose={1000} />
         </div>
         {/* open */}
         {Opendrawer && (

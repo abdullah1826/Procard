@@ -20,6 +20,8 @@ import { auth, db } from "../../Services/Firebase/config";
 
 import { toast, ToastContainer } from "react-toastify";
 import AlertMessage from "../../Atoms/Dialog/AlertMessage";
+import procardlogo from "../../../Assets/Images/procard.png";
+import "./SignupPage2.css";
 export default function SignupPage2() {
   const [showpassword, setShowpassword] = useState({
     input1: true,
@@ -268,16 +270,16 @@ export default function SignupPage2() {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="siginpage2">
-        <div style={{ width: "85%", marginTop: "25px" }}>
+        {/* <div style={{ width: "85%", marginTop: "25px" }}>
           <Link to="/loginpage2">
             <ArrowBackIosIcon style={{ color: "black" }} />
           </Link>
-        </div>
+        </div> */}
         <img
           width="148px"
           height="110px"
           style={{ marginTop: "30px" }}
-          src="images/procard.png"
+          src={procardlogo}
         />
         <div className="Textsigin">
           <h1>The Networking Card of the Future!</h1>
@@ -346,7 +348,8 @@ export default function SignupPage2() {
         <button id="buttonn2" onClick={handleSignupWithEmail}>
           Signup
         </button>
-        <p style={{ marginTop: "50px", marginBottom: "20px" }}>
+        <br />
+        {/* <p style={{ marginTop: "50px", marginBottom: "20px" }}>
           Already have an account?{" "}
           <Link
             to="/signinpage2"
@@ -354,7 +357,7 @@ export default function SignupPage2() {
           >
             Sign in
           </Link>
-        </p>
+        </p> */}
       </div>
       <ToastContainer position="top-center" autoClose={1000} />
       <AlertMessage

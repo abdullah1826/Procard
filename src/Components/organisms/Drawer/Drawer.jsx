@@ -183,11 +183,15 @@ const Drawer = ({ hideDrawer, closedrawer, theme }) => {
               verifyBeforeUpdateEmail(auth.currentUser, inputData).then(() => {
                 update(ref(db, "User/" + userId), {
                   email: inputData,
+                }).then(() => {
+                  toast.success(
+                    "An email have been sent to you, please verify to update email"
+                  );
                 });
                 get(child(dbRef, `User/${userId}`)).then((response) => {
                   dispatch(loginUserObj(response.val()));
                 });
-                toast.success(t("emailUpdatedSuccess"));
+
                 // setNewEmail("");
                 setShowChangeEmailSlider(false);
               });

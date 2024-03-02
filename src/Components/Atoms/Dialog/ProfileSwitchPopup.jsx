@@ -39,7 +39,8 @@ const ProfileSwitchPopup = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "black",
+              background:
+                "linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%)",
             }}
           >
             <TaskAltOutlinedIcon style={{ color: "white", fontSize: "3rem" }} />
@@ -97,10 +98,10 @@ const ProfileSwitchPopup = ({
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              background:'linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%)',
+              background:
+                "linear-gradient(89.83deg, #0672A1 0.11%, #BB4985 99.85%)",
               textTransform: "capitalize",
               fontSize: "15px",
-              
             }}
           >
             Ok
