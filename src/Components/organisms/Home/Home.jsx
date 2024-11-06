@@ -1115,7 +1115,12 @@ const Home = () => {
           </div>
         ) : (
           <div className="home-icons-main" style={{ height: "315px" }}>
-            <div className="home-icons-container">
+            <div
+              className="home-icons-container"
+              style={{
+                backgroundColor: theme === "theme1" ? "white" : "black",
+              }}
+            >
               {items ? (
                 items?.map((elm, index) => (
                   <div
@@ -1128,6 +1133,7 @@ const Home = () => {
                     style={{
                       color: theme === "theme1" ? "black" : "white",
                       backgroundColor: theme === "theme1" ? "white" : "black",
+                      border: "1px solid white",
                     }}
                     // onTouchStart={(e) => handleTouchStart2(e, index)}
                     // onTouchMove={handleTouchMove2}

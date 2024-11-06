@@ -283,10 +283,7 @@ export default function SignupPage2() {
         />
         <div className="Textsigin">
           <h1>The Networking Card of the Future!</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Cursus mauris in sodales
-            aliquet augue bibendum velit.
-          </p>
+          <p>Get started with Africa's #1 digital business card platform</p>
         </div>
         <div className="input-sigin2">
           <input

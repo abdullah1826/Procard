@@ -28,11 +28,11 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LoginPage2 />} />
           {/*<Route exact path="/Signoption" element={<SplashScreen />} />*/}
-          <Route
+          {/* <Route
             exact
             path="/signupwithtag/:tagId"
             element={<SignupWithTag />}
-          />
+          /> */}
           {/* <Route exact path="/signup/with" element={<SignupOptionsScreen />} /> */}
           <Route exact path="/signin" element={<LoginScreen />} />
           <Route
@@ -41,10 +41,10 @@ function App() {
             element={<ForgotPasswordScreen />}
           />
 
-          <Route path="/signup">
+          {/* <Route path="/signup">
             <Route path=":tagId" element={<SignupScreen />} />
             <Route path="" element={<SignupScreen />} />
-          </Route>
+          </Route> */}
           {/* <Route exact path="/signup">
             <Route path=":tagId?" element={<SignupScreen />} />
           </Route> */}

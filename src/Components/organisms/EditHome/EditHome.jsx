@@ -129,25 +129,15 @@ const EditHome = () => {
 
   // const options = { month: 'short', day: '2-digit', year: 'numeric' };
   // const formattedDate = new Date(editUserData?.date_of_birth?.$d).toLocaleDateString('en-US', options).replace('  ', ',');
-  const [editUserData, setEditUserData] = useState({
-    name: loginUserData?.name,
-    bio: loginUserData?.bio,
-    phone_number: loginUserData?.phone,
-    location: loginUserData?.address,
-    gender: loginUserData?.gender,
-    profile_pic: loginUserData?.profileUrl,
-    logo: loginUserData?.logoUrl,
-    date_of_birth: loginUserData?.dob,
-    // ? moment(loginUserData?.dob).format("DD.MM.YYYY")
-    // : null,
-  });
+
   let [theme, settheme] = useState("theme1");
   let [style, setStyle] = useState("style2");
   let [cardColor, setCardColor] = useState("white");
+  const userUid = localStorage.getItem("sapiduserid");
   useEffect(() => {
     const userId = auth?.currentUser?.uid;
     const dbRef = ref(getDatabase());
-    get(child(dbRef, `User/${userId}`))
+    get(child(dbRef, `User/${userUid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
           dispatch(updateSocialLinks(snapshot.val().links));
@@ -163,7 +153,7 @@ const EditHome = () => {
         console.error(error);
       });
 
-    get(child(dbRef, `User/${userId}`))
+    get(child(dbRef, `User/${userUid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
           // console.log(snapshot.val(), "console of user table");
@@ -179,6 +169,19 @@ const EditHome = () => {
         console.error(error);
       });
   }, []);
+
+  const [editUserData, setEditUserData] = useState({
+    name: loginUserData?.name,
+    bio: loginUserData?.bio,
+    phone_number: loginUserData?.phone,
+    location: loginUserData?.address,
+    gender: loginUserData?.gender,
+    profile_pic: loginUserData?.profileUrl,
+    logo: loginUserData?.logoUrl,
+    date_of_birth: loginUserData?.dob,
+    // ? moment(loginUserData?.dob).format("DD.MM.YYYY")
+    // : null,
+  });
 
   const handleSubmitButton = () => {};
 
@@ -1298,11 +1301,9 @@ const EditHome = () => {
             />
             <div
               className="social_sites_mainn"
-              style={
-                width > 600 || width < 380
-                  ? { marginTop: "" }
-                  : { marginTop: "" }
-              }
+              style={{
+                backgroundColor: theme === "theme1" ? "white" : "black",
+              }}
             >
               {socialLinks?.map((site, index) => {
                 return (
@@ -1313,6 +1314,7 @@ const EditHome = () => {
                       style={{
                         color: theme === "theme1" ? "black" : "white",
                         backgroundColor: theme === "theme1" ? "white" : "black",
+                        border: "1px solid white",
                       }}
                     >
                       <span
